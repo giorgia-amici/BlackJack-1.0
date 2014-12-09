@@ -28,4 +28,13 @@ describe("Deck", function(){
  		expect(deck.readyDeck.length).toEqual(31)
  	});
 
+ 	it("will assign a score to the player", function(){
+ 		var deck = new Deck
+ 		deck.makeSuits()
+ 		deck.deal()
+ 		deck.cardValue()
+ 		// expect(deck.pickFromDeck)
+
+ 	});
+
 });

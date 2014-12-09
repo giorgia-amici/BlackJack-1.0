@@ -21,7 +21,12 @@ Deck.prototype.removeCard = function() {
 
 Deck.prototype.deal = function() {
 	this.pickFromDeck = this.readyDeck[Math.floor(Math.random() * this.readyDeck.length)]
+	// replace removeCard with cardValue
 	return this.removeCard(this.pickFromDeck)
+};
+
+Deck.prototype.cardValue = function(){
+// then call removeCard from here after value assigned to pickFromDeck
 };
 
 
