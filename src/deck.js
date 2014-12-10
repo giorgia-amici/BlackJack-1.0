@@ -1,6 +1,6 @@
 
 function Deck(){
-	this.pickFromDeck
+	// this.pickFromDeck
 	this.readyDeck = []
 	this.suits = ["flowers", "hearts", "diamonds", "spades"];
 	this.faceValues = [7, 8, 9, 10, "J", "Q", "K", "A"];
@@ -14,20 +14,19 @@ Deck.prototype.makeSuits = function(){
 	return this.readyDeck
 }
 
-Deck.prototype.removeCard = function() {
-	var index = this.readyDeck.indexOf(this.pickFromDeck)
-	this.readyDeck.splice(index, 1)
-};
+// Deck.prototype.removeCard = function() {
+// 	var index = this.readyDeck.indexOf(this.pickFromDeck)
+// 	this.readyDeck.splice(index, 1)
+// };
 
-Deck.prototype.deal = function() {
-	this.pickFromDeck = this.readyDeck[Math.floor(Math.random() * this.readyDeck.length)]
-	// replace removeCard with cardValue
-	return this.removeCard(this.pickFromDeck)
-};
+// Deck.prototype.shuffleDeck = function() {
+// 	this.pickFromDeck = this.readyDeck[Math.floor(Math.random() * this.readyDeck.length)]
+// };
 
-Deck.prototype.cardValue = function(){
-// then call removeCard from here after value assigned to pickFromDeck
-};
-
+// Deck.prototype.deal = function(){
+// 	this.shuffleDeck()
+// 	var drawPoint = parseInt(this.pickFromDeck.slice(-1))
+// 	return drawPoint
+// };
 
 module.exports = Deck;
