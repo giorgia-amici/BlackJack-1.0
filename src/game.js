@@ -43,7 +43,7 @@ Game.prototype.dealToPlayer = function(){
 Game.prototype.houseDrawsCard = function(){
 	this.selectCard()
 	var drawPoint = parseInt(this.pickFromDeck.slice(-2))
-	this.picks.push(drawPoint)
+	this.housePoints.push(drawPoint)
 	this.removeCard()
 }
 
