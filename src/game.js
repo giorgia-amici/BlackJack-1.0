@@ -48,24 +48,26 @@ Game.prototype.houseDrawsCard = function(){
 	this.removeCard()
 }
 
+Game.prototype.countingPoints = function(array, total){
+	for(var i in array) {total += array[i];}
+		// return this.houseTotal
+}
+
 Game.prototype.play = function(){
 	if(this.turn === true){
 		this.houseDrawsCard() 
 		this.turn = false
+		this.countingPoints(this.housePoints, this.houseTotal)
 		return this.pickFromDeck
 	}
 	else{
 		this.dealToPlayer()
 		this.turn = true
+		this.countingPoints(this.playerPoints, this.playerTotal)
 		return this.pickFromDeck
 	}
 }
 
-Game.prototype.countingPoints = function(array){
-	for(var i in array) {this.houseTotal += array[i];}
-		// return this.houseTotal
-
-}
 
 
 
