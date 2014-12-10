@@ -53,8 +53,8 @@ Game.prototype.play = function(){
 		this.turn = false
 		return this.pickFromDeck
 	}
-	if(this.turn !== true){
-		this.dealToPlayer
+	else{
+		this.dealToPlayer()
 		this.turn = true
 		return this.pickFromDeck
 	}
