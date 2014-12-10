@@ -50,31 +50,28 @@ Game.prototype.houseDrawsCard = function(){
 
 Game.prototype.countingPoints = function(array, total){
 	for(var i in array) {total += array[i];}
-		// return this.houseTotal
 }
 
 Game.prototype.play = function(){
 	if(this.turn === true){
 		this.houseDrawsCard() 
 		this.turn = false
-		this.countingPoints(this.housePoints, this.houseTotal)
+		// this.countingPoints(this.housePoints, this.houseTotal)
 		return this.pickFromDeck
 	}
 	else{
 		this.dealToPlayer()
 		this.turn = true
-		this.countingPoints(this.playerPoints, this.playerTotal)
+		// this.countingPoints(this.playerPoints, this.playerTotal)
 		return this.pickFromDeck
 	}
+	return this.hands -= 1;
 }
 
-
-
-
-
-// Game.prototype.handsLeft = function(){
-
-// }
+Game.prototype.handsLeft = function(){
+	this.hands -= 1; this.hands = 0
+	// error => reset game
+}
 
 // // Player.stop
 
