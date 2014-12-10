@@ -53,6 +53,7 @@ Game.prototype.countingPoints = function(array, total){
 }
 
 Game.prototype.play = function(){
+	this.hands -= 1;
 	if(this.turn === true){
 		this.houseDrawsCard() 
 		this.turn = false
@@ -65,7 +66,7 @@ Game.prototype.play = function(){
 		// this.countingPoints(this.playerPoints, this.playerTotal)
 		return this.pickFromDeck
 	}
-	return this.hands -= 1;
+	
 }
 
 Game.prototype.handsLeft = function(){
