@@ -16,10 +16,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/giorgia-amici/RingMyBellBJ.git"
+    "url": "https://github.com/giorgia-amici/RingMyBellBJ.git",
+    "url": "https://github.com/Callisto13/RingMyBellBlackJack.git"
   },
   "bugs": {
-    "url": "https://github.com/giorgia-amici/RingMyBellBJ/issues"
+    "url": "https://github.com/giorgia-amici/RingMyBellBJ/issues",
+    "url": "https://github.com/Callisto13/RingMyBellBlackJack/issues"
   },
-  "homepage": "https://github.com/giorgia-amici/RingMyBellBJ"
+  "homepage": "https://github.com/giorgia-amici/RingMyBellBJ",
+  "homepage": "https://github.com/Callisto13/RingMyBellBlackJack"
 }

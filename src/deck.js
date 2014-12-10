@@ -1,9 +1,8 @@
 
 function Deck(){
-	// this.pickFromDeck
 	this.readyDeck = []
 	this.suits = ["flowers", "hearts", "diamonds", "spades"];
-	this.faceValues = [7, 8, 9, 10, "J", "Q", "K", "A"];
+	this.faceValues = ["07", "08", "09", "10", "J10", "Q10", "K10", "A11"];
 }
 
 Deck.prototype.makeSuits = function(){
@@ -13,20 +12,5 @@ Deck.prototype.makeSuits = function(){
 	}
 	return this.readyDeck
 }
-
-// Deck.prototype.removeCard = function() {
-// 	var index = this.readyDeck.indexOf(this.pickFromDeck)
-// 	this.readyDeck.splice(index, 1)
-// };
-
-// Deck.prototype.shuffleDeck = function() {
-// 	this.pickFromDeck = this.readyDeck[Math.floor(Math.random() * this.readyDeck.length)]
-// };
-
-// Deck.prototype.deal = function(){
-// 	this.shuffleDeck()
-// 	var drawPoint = parseInt(this.pickFromDeck.slice(-1))
-// 	return drawPoint
-// };
 
 module.exports = Deck;
