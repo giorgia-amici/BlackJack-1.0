@@ -28,7 +28,7 @@ Game.prototype.selectCard = function(){
 	this.pickFromDeck = this.deck.readyDeck[Math.floor(Math.random() * this.deck.readyDeck.length)]
 }
 
-Deck.prototype.removeCard = function() {
+Deck.prototype.removeCard = function(){
 	 var index = this.deck.readyDeck.indexOf(this.pickFromDeck) 
 	this.deck.readyDeck.splice(index, 1) 
 };
