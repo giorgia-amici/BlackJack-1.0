@@ -1,5 +1,3 @@
-// var deck = require('deck')
-
 function Game(){
 	this.turn
 	this.hands = 6
@@ -8,6 +6,8 @@ function Game(){
 	this.deck
 	this.housePoints = []
 	this.playerPoints = []
+	this.houseTotal
+	this.playerTotal
 }
 
 Game.prototype.addDeck = function(deck){
@@ -40,6 +40,7 @@ Game.prototype.dealToPlayer = function(){
 	this.removeCard()
 }
 
+
 Game.prototype.houseDrawsCard = function(){
 	this.selectCard()
 	var drawPoint = parseInt(this.pickFromDeck.slice(-2))
@@ -60,6 +61,11 @@ Game.prototype.play = function(){
 	}
 }
 
+Game.prototype.countingPoints = function(array){
+	for(var i in array) {this.houseTotal += array[i]}
+		return this.houseTotal
+}
+
 
 
 
@@ -69,10 +75,6 @@ Game.prototype.play = function(){
 
 // // Player.stop
 
-// Game.prototype.handWinner = funtion(){
-
-
-// }
 
 
 
