@@ -33,7 +33,7 @@ describe("Deck", function(){
  		deck.makeSuits()
  		deck.deal()
  		deck.cardValue()
- 		// expect(deck.pickFromDeck)
+ 		expect(deck.pickFromDeck)
 
  	});
 
