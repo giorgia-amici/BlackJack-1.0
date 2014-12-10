@@ -6,8 +6,8 @@ function Game(){
 	this.deck
 	this.housePoints = []
 	this.playerPoints = []
-	this.houseTotal
-	this.playerTotal
+	this.houseTotal = 0
+	this.playerTotal = 0
 }
 
 Game.prototype.addDeck = function(deck){
@@ -62,8 +62,9 @@ Game.prototype.play = function(){
 }
 
 Game.prototype.countingPoints = function(array){
-	for(var i in array) {this.houseTotal += array[i]}
-		return this.houseTotal
+	for(var i in array) {this.houseTotal += array[i];}
+		// return this.houseTotal
+
 }
 
 
