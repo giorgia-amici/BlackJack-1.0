@@ -40,7 +40,6 @@ Game.prototype.dealToPlayer = function(){
 	this.removeCard()
 }
 
-
 Game.prototype.houseDrawsCard = function(){
 	this.selectCard()
 	var drawPoint = parseInt(this.pickFromDeck.slice(-2))
@@ -50,35 +49,35 @@ Game.prototype.houseDrawsCard = function(){
 
 Game.prototype.countingPoints = function(array, total){
 	for(var i in array) {total += array[i];}
+		return total
 }
 
+Game.prototype.updateHandsLeft = function(){
+	this.hands !== 0 ? this.hands -= 1 : 'game over div'
+};
+
 Game.prototype.play = function(){
-	this.hands -= 1;
+	this.updateHandsLeft()                                                                                                                                                                                                                            
 	if(this.turn === true){
 		this.houseDrawsCard() 
 		this.turn = false
-		// this.countingPoints(this.housePoints, this.houseTotal)
 		return this.pickFromDeck
 	}
 	else{
 		this.dealToPlayer()
 		this.turn = true
-		// this.countingPoints(this.playerPoints, this.playerTotal)
 		return this.pickFromDeck
 	}
 	
 }
 
-Game.prototype.handsLeft = function(){
-	this.hands -= 1; this.hands = 0
-	// error => reset game
+Game.prototype.winner = function(x, y){
+	// this.countingPoints(x, y)
+	// this.countingPoints(this.playerPoints, this.playerTotal)
+	// if(this.houseTotal > this.playerTotal){
+	// 	console.log('la casa vince sempre')
+	// }
 }
-
-// // Player.stop
-
-
-
-
 
 
 
