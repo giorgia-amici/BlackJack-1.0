@@ -1,7 +1,6 @@
 function Game(){
 	this.turn
-	this.cards = 6
-	this.hands = 3
+	this.hands = 6
 	this.player 
 	this.pickFromDeck
 	this.deck
@@ -48,42 +47,27 @@ Game.prototype.houseDrawsCard = function(){
 	this.removeCard()
 }
 
-Game.prototype.totalHouse = function(){
-	this.houseTotal = this.housePoints.reduce(function(c, g){
-		return c + g;
-	});
+Game.prototype.countingPoints = function(array){
+	var total = 0
+	for(var i in array) {total += array[i];}
+		return total
 }
 
-Game.prototype.totalPlayer = function(){
-	this.playerTotal = this.playerPoints.reduce(function(z, s){
-		return z + s;
-	});
-}
-
-Game.prototype.totalAll = function(){
-	var sth = this.totalPlayer()
-	var sthelse = this.totalHouse()
-	return sth
-}
-
-Game.prototype.updateCardsLeft = function(){
-	this.cards !== 0 ? this.cards -= 1 : this.hands -= 1
-	// when hands === 0 stop game
+Game.prototype.updateHandsLeft = function(){
+	this.hands !== 0 ? this.hands -= 1 : 'game over div'
 };
 
 Game.prototype.play = function(){
-	this.updateCardsLeft()                                                                                                                                                                                                                            
+	this.updateHandsLeft()                                                                                                                                                                                                                            
 	if(this.turn === true){
 		this.houseDrawsCard() 
 		this.turn = false
 		return this.pickFromDeck
 	}
 	else{
-		if(this.player.playerCalls === false){
-			this.dealToPlayer()
-			this.turn = true
-			return this.pickFromDeck
-		}
+		this.dealToPlayer()
+		this.turn = true
+		return this.pickFromDeck
 	}
 	
 }
