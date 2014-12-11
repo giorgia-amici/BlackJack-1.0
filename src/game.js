@@ -47,10 +47,26 @@ Game.prototype.houseDrawsCard = function(){
 	this.removeCard()
 }
 
-Game.prototype.countingPoints = function(array){
-	var total = 0
-	for(var i in array) {total += array[i];}
-		return total
+Game.prototype.totalHouse = function(){
+	this.houseTotal = this.housePoints.reduce(function(c, g){
+		return c + g;
+	});
+}
+
+Game.prototype.totalPlayer = function(){
+	this.playerTotal = this.playerPoints.reduce(function(z, s){
+		return z + s;
+	});
+}
+
+Game.prototype.totalAll = function(){
+	var sth = this.totalPlayer()
+	var sthelse = this.totalHouse()
+	return sth
+
+	// var total = 0
+	// for(var i in array) {total += array[i];}
+	// 	return total
 }
 
 Game.prototype.updateHandsLeft = function(){

@@ -1,6 +1,6 @@
 var Game = require('./src/game.js');
 var Deck = require('./src/deck.js');
-// var Player = require('./src/player.js');
+var Player = require('./src/player.js');
 
 
 
@@ -20,4 +20,5 @@ var Deck = require('./src/deck.js');
 
 module.exports.game = new Game();
 module.exports.deck = new Deck();
+module.exports.player = new Player();
 // module.exports.player = new Player();
