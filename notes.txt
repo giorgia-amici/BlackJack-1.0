@@ -1,0 +1,29 @@
+
+JS STUFF(Giorgia)
+
+Game.prototype.play = function(){
+	else{
+		if(this.player.playerCalls === false){
+			this.dealToPlayer()
+			this.turn = true
+			return this.pickFromDeck
+		}
+	
+}
+winnner
+
+
+
+
+TESTING(CLAUDIA)
+
+
+
+
+ANGULAR(GIORGIA)
+
+
+
+
+SOCKETS(BOTH)
+
