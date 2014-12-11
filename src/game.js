@@ -72,9 +72,6 @@ Game.prototype.play = function(){
 	
 }
 
-Game.prototype.winner = function(x, y){
-	this.countingPoints(x) > this.countingPoints(y) ? 'house wins' : 'probl tua'
-}
 
 
 // > game.countingPoints(game.housePoints) > game.countingPoints(game.playerPoints) ? 'i am working' : 'nn'
