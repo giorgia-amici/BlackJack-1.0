@@ -89,7 +89,6 @@ Game.prototype.play = function(){
 }
 
 
-
 // > game.countingPoints(game.housePoints) > game.countingPoints(game.playerPoints) ? 'i am working' : 'nn'
 // 'i am working
 
