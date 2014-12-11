@@ -47,7 +47,8 @@ Game.prototype.houseDrawsCard = function(){
 	this.removeCard()
 }
 
-Game.prototype.countingPoints = function(array, total){
+Game.prototype.countingPoints = function(array){
+	var total = 0
 	for(var i in array) {total += array[i];}
 		return total
 }
@@ -72,12 +73,12 @@ Game.prototype.play = function(){
 }
 
 Game.prototype.winner = function(x, y){
-	// this.countingPoints(x, y)
-	// this.countingPoints(this.playerPoints, this.playerTotal)
-	// if(this.houseTotal > this.playerTotal){
-	// 	console.log('la casa vince sempre')
-	// }
+	this.countingPoints(x) > this.countingPoints(y) ? 'house wins' : 'probl tua'
 }
+
+
+// > game.countingPoints(game.housePoints) > game.countingPoints(game.playerPoints) ? 'i am working' : 'nn'
+// 'i am working
 
 
 
