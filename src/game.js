@@ -1,6 +1,7 @@
 function Game(){
 	this.turn
-	this.hands = 6
+	this.cards = 6
+	this.hands = 3
 	this.player 
 	this.pickFromDeck
 	this.deck
@@ -63,27 +64,26 @@ Game.prototype.totalAll = function(){
 	var sth = this.totalPlayer()
 	var sthelse = this.totalHouse()
 	return sth
-
-	// var total = 0
-	// for(var i in array) {total += array[i];}
-	// 	return total
 }
 
-Game.prototype.updateHandsLeft = function(){
-	this.hands !== 0 ? this.hands -= 1 : 'game over div'
+Game.prototype.updateCardsLeft = function(){
+	this.cards !== 0 ? this.cards -= 1 : this.hands -= 1
+	// when hands === 0 stop game
 };
 
 Game.prototype.play = function(){
-	this.updateHandsLeft()                                                                                                                                                                                                                            
+	this.updateCardsLeft()                                                                                                                                                                                                                            
 	if(this.turn === true){
 		this.houseDrawsCard() 
 		this.turn = false
 		return this.pickFromDeck
 	}
 	else{
-		this.dealToPlayer()
-		this.turn = true
-		return this.pickFromDeck
+		if(this.player.playerCalls === false){
+			this.dealToPlayer()
+			this.turn = true
+			return this.pickFromDeck
+		}
 	}
 	
 }
