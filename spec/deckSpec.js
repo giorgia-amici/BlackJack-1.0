@@ -1,40 +1,35 @@
 var Deck = require('../src/deck.js')
 
 describe("Deck", function(){
- 	
 
- 	it('is an array', function(){
- 		var deck = new Deck
- 		expect(deck.readyDeck).toBeArray;
- 	});
+	describe('before added to the game', function(){
 
- 	it('matches suits with face values', function(){
- 		var deck = new Deck
- 		deck.makeSuits()
- 		expect(deck.readyDeck[0]).toEqual('flowers7')
- 	});
+	 	it('it should be initialized with an empty array', function(){
+	 		var deck = new Deck();
+	 		expect(deck.readyDeck).toEqual([]);
+	 	});
 
- 	it('can pull one at random', function(){
- 		var deck = new Deck
- 		deck.makeSuits()
- 		deck.deal()
- 		expect(deck.pickFromDeck).not.toBe(null)
- 	});
+	 	it('it should be initialized with an array of suits', function(){
+	 		var deck = new Deck();
+	 		expect(deck.suits).toEqual(["flowers", "hearts", "diamonds", "spades"]);
+	 	});
 
- 	it("will delete the player's pick", function(){
- 		var deck = new Deck
- 		deck.makeSuits()
- 		deck.deal()
- 		expect(deck.readyDeck.length).toEqual(31)
- 	});
+	 	it('it should be initialized with an array of values', function(){
+	 		var deck = new Deck();
+	 		expect(deck.faceValues).toEqual(["07", "08", "09", "10", "J10", "Q10", "K10", "A11"]);
+	 	});
 
- 	it("will assign a score to the player", function(){
- 		var deck = new Deck
- 		deck.makeSuits()
- 		deck.deal()
- 		deck.cardValue()
- 		expect(deck.pickFromDeck)
+	});
 
- 	});
+	describe('before play begins', function(){
+
+	 	it('the suits and faceValues arrays are looped over to fill the empty readyDeck array with a complete game deck', function(){
+	 		var deck = new Deck();
+	 		deck.makeSuits()
+	 		expect(deck.readyDeck[0]).toEqual('flowers07')
+	 		expect(deck.readyDeck[31]).toEqual('spadesA11')
+	 	});
+
+	});
 
 });
