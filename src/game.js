@@ -61,39 +61,33 @@ Game.prototype.totalPlayer = function(){
 }
 
 Game.prototype.totalAll = function(){
-	var sth = this.totalPlayer()
-	var sthelse = this.totalHouse()
-	return sth
+	this.totalPlayer()
+	this.totalHouse()
+	return [this.playerTotal, this.houseTotal];
 }
 
 Game.prototype.updateCardsLeft = function(){
 	this.cards !== 0 ? this.cards -= 1 : this.hands -= 1
-	// when hands === 0 stop game
+};
+
+Game.prototype.hitAgain = function(){
+	this.player.calls === false ? this.dealToPlayer() : this.turn = true
 };
 
 Game.prototype.play = function(){
-	this.updateCardsLeft()                                                                                                                                                                                                                            
-	if(this.turn === true){
-		this.houseDrawsCard() 
-		this.turn = false
-		return this.pickFromDeck
-	}
-	else{
-		if(this.player.playerCalls === false){
-			this.dealToPlayer()
-			this.turn = true
-			return this.pickFromDeck
-		}
-	}
-	
+	this.updateCardsLeft() 
+	this.turn === true ? this.houseDrawsCard() : this.hitAgain()
+	this.turn = !this.turn
+	return this.pickFromDeck
 }
 
+// Game.prototype.stop = function(){
 
-// > game.countingPoints(game.housePoints) > game.countingPoints(game.playerPoints) ? 'i am working' : 'nn'
-// 'i am working
+// }
 
+// Game.prototype.declareWinner = function(){
 
-
+// }
 
 
 
