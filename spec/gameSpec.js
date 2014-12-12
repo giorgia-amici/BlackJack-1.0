@@ -2,10 +2,12 @@ var Game = require('../src/game.js')
 
 describe("Game", function(){
 
-	var game;
+	var game, deck, player;
 
 	beforeEach(function(){
 		game = new Game;
+		deck = jasmine.createSpyObj('deck', ['readyDeck', 'makeSuits'])
+		player = jasmine.createSpyObj('player', [''])
 	});
 
 	describe('before deck or player is added', function(){
@@ -52,15 +54,39 @@ describe("Game", function(){
 
 	});
 
-	describe('', function(){
+	describe('when prepping to play', function(){
 
-	 	xit('', function(){
-	 		
+	 	it('can add a deck', function(){
+	 		game.addDeck(deck)
+	 		expect(game.deck).toEqual(deck)
 	 	});
 
-	 	xit('', function(){
-	 		
+	 	it('can add a player', function(){
+	 		game.addPlayer(player)
+	 		expect(game.player).toEqual(player)
 	 	});
+
+	 	it('can start the game if all is ready and trigger the deck\'s makeSuits method', function(){
+	 		game.addDeck(deck)
+	 		game.addPlayer(player)
+	 		game.startGame()
+	 		expect(game.turn).toBe(true)
+	 		expect(deck.makeSuits).toHaveBeenCalled();
+	 	});
+
+	});
+
+	describe('when playing the game', function(){
+
+		beforeEach(function(){
+			game.addDeck(deck);
+			game.addPlayer(player);
+			game.startGame();
+		});
+
+		it('', function(){
+
+		});
 
 	});
 

@@ -22,6 +22,7 @@ Game.prototype.addPlayer = function(player){
 Game.prototype.startGame = function(){
 	if(this.player && this.deck !== null){
 		this.turn = true
+		this.deck.makeSuits()
 	}
 }
 
@@ -88,5 +89,6 @@ Game.prototype.play = function(){
 // Game.prototype.declareWinner = function(){
 
 // }
+
 
 module.exports = Game;
