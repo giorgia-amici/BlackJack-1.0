@@ -1,13 +1,13 @@
 function Player(){
-	this.playerCalls
+	this.calls
 }
 
 Player.prototype.hitMe = function(){
-	this.playerCalls = false
+	this.calls = false
 }
 
-Player.prototype.stop = function(){
-	this.playerCalls = true
+Player.prototype.stopGame = function(){
+	this.calls = true
 }
 
 
