@@ -1,11 +1,14 @@
 var express = require('express');
 var app = express();
 var server = require('http').createServer(app);
-// app.use(bodyParser.json());
+var path = require('path')
 // app.use(bodyParser.urlencoded());
 
-app.set('view engine', 'ejs');
-app.set('views', 'views');
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'html');
+app.engine('html', require('ejs').renderFile);
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(request, response){
   response.render('index')

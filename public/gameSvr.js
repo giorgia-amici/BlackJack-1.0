@@ -75,7 +75,7 @@ Game.prototype.resetPointsWithNewHand = function(){
 Game.prototype.resetRound = function(){
 	this.hands -= 1
 	this.cards = 5 
- 	this.resetPointsWithNewHand()
+ resetPointsWithNewHand()
 };
 
 Game.prototype.updateCardsLeft = function(){
@@ -95,30 +95,39 @@ Game.prototype.play = function(){
 
 Game.prototype.stop = function(){
 	this.calls = true
-	this.turn = false
 };
 
-	Game.prototype.declareWinner = function(){
-		this.totalAll()
-		if(this.calls === true && this.player.calls === true){
-			return this.playerTotal
-	}
-};
+// Game.prototype.declareHandWinner = function(){
+	// when both player and computer stop(added a this.call false to the game engine as well)
+	// this.calls === true && this.player.calls === true
+		if(this.playerTotal > this.houseTotal){
+			// player wins
+		}
+		if(this.playerTotal < this.houseTotal){
+			// 
+		}
+		if(this.playerTotal === this.houseTotal){
+			// 
+		}
+		if(this.playerTotal || this.houseTotal === 21){
+			// 
+		}
 
-	Game.prototype.playerWins = function(){
-			this.totalAll()
-			if(this.playerTotal > this.houseTotal){
-				this.playerTotal <= 21 ? this.declareWinner() : this.houseWins()
-			}
-	};
+// }
 
-	Game.prototype.houseWins = function(){
-		return this.houseTotal
-	};
 
-	Game.prototype.anyBlackJack = function(num){
-		return num === 21;
-	};
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 module.exports = Game;
