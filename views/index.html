@@ -4,16 +4,25 @@
     <meta charset="utf-8">
     <title>BLACKJACK</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body ng-app="blackJack" ng-controller="gameCtrl">
   <h1>"BlackJack"</h1>
-  {{ game }}
+  <div>
+    <img id="face_down_player" ng-src = "face_down_deck.jpg" width="180" height="250">
+  </div>
+  <div>
+    <img id="face_down_game" ng-src = "face_down_deck.jpg" width="180" height="250">
+  {{  game.pickFromDeck }}
+  {{  game.housePoints  }}
+  </div>
+
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <!-- script js -->
     <script src="app.js"></script>
     <script src="gameCtrl.js"></script>
+    <script src="deckSvr.js"></script>
+    <script src="interface.js"></script>
   </body>
 </html>

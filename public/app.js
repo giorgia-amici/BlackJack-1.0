@@ -1,1 +1,1 @@
-angular.module('blackJack', []);
+angular.module('blackJack', ['blackjackServices']);
