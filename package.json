@@ -4,7 +4,8 @@
   "description": "RingMyBellBlackJack ===================",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose"
+    "test": "node_modules/jasmine-node/bin/jasmine-node spec/ --verbose",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
