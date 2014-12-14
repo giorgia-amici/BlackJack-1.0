@@ -17,7 +17,7 @@ var Player = require('./src/player.js');
 // game.addDeck(deck)
 // game.deck.makeSuits()
 // game.startGame()
-// game.player.hitMe()
+
 
 module.exports.game = new Game();
 module.exports.deck = new Deck();
