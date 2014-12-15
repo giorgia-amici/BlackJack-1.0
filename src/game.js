@@ -107,6 +107,7 @@ Game.prototype.play = function(){
 Game.prototype.stop = function(){
 	this.calls = true
 	this.turn = false
+	this.playerWins()
 };
 
 	Game.prototype.declareWinner = function(){
