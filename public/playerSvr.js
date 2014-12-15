@@ -1,10 +1,13 @@
-function Player(){
-	this.calls = false
-}
+// var playerServices = angular.module('playerServices', []);
 
-Player.prototype.stop = function(){
-	this.calls = true
-}
+// playerServices.factory('Player', [function(){
+// 	var Player = function(){
+// 		this.calls = false
+// 	};
+// Player.prototype.stop = function(){
+// 	this.calls = true
+// }
 
+// return Player
 
-module.exports = Player;
+// }])
