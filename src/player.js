@@ -1,13 +1,12 @@
 function Player(){
-	this.playerCalls
-}
+	this.calls = false
+	this.pickFromDeckPlayer = []
+	this.temp
 
-Player.prototype.hitMe = function(){
-	this.playerCalls = false
 }
 
 Player.prototype.stop = function(){
-	this.playerCalls = true
+	this.calls = true
 }
 
 

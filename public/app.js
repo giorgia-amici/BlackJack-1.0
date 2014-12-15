@@ -1,0 +1,1 @@
+angular.module('blackJack', ['blackjackServices']);
