@@ -4,7 +4,7 @@ var blackjackServices = angular.module('blackjackServices', []);
 blackjackServices.factory('Deck',[function(){
 	var Deck = function(){
 		this.readyDeck = []
-		this.suits = ["flowers", "hearts", "diamonds", "spades"];
+		this.suits = ["clubs", "hearts", "diamonds", "spades"];
 		this.faceValues = ["07", "08", "09", "10", "J10", "Q10", "K10", "A11"];
 	};
 
@@ -22,6 +22,7 @@ return Deck
 blackjackServices.factory('Player', [function(){
 	var Player = function(){
 		this.calls = false
+		this.pickFromDeckPlayer 
 	};
 Player.prototype.stop = function(){
 	this.calls = true
@@ -33,11 +34,11 @@ return Player
 
 blackjackServices.factory('Game', [function(){
 	var Game = function(){
-	this.turn
+	this.turn = true 
 	this.cards = 6
 	this.hands = 3
 	this.player 
-	this.pickFromDeck
+	this.pickFromDeck 
 	this.deck
 	this.housePoints = []
 	this.playerPoints = []
@@ -61,8 +62,12 @@ Game.prototype.startGame = function(){
 	}
 }
 
-Game.prototype.selectCard = function(){
+Game.prototype.selectCardComputer = function(){
 	this.pickFromDeck = this.deck.readyDeck[Math.floor(Math.random() * this.deck.readyDeck.length)]
+}
+
+Game.prototype.selectCardPlayer = function(){
+	this.player.pickFromDeckPlayer = this.deck.readyDeck[Math.floor(Math.random() * this.deck.readyDeck.length)]
 }
 
 Game.prototype.removeCard = function(){
@@ -71,14 +76,14 @@ Game.prototype.removeCard = function(){
 };
 
 Game.prototype.dealToPlayer = function(){
-	this.selectCard()
-	var dealPoint = parseInt(this.pickFromDeck.slice(-2))
-	this.playerPoints.push(dealPoint)
+	this.selectCardPlayer()
+	var dealPointP = parseInt(this.player.pickFromDeckPlayer.slice(-2))
+	this.playerPoints.push(dealPointP)
 	this.removeCard()
 }
 
 Game.prototype.houseDrawsCard = function(){
-	this.selectCard()
+	this.selectCardComputer()
 	var drawPoint = parseInt(this.pickFromDeck.slice(-2))
 	this.housePoints.push(drawPoint)
 	this.removeCard()
@@ -107,14 +112,14 @@ Game.prototype.resetPointsWithNewHand = function(){
 	this.playerPoints = []
 };
 
-Game.prototype.resetRound = function(){
+Game.prototype.newHand= function(){
 	this.hands -= 1
 	this.cards = 5 
  	this.resetPointsWithNewHand()
 };
 
 Game.prototype.updateCardsLeft = function(){
-	this.cards !== 0 ? this.cards -= 1 : resetRound()
+	this.cards !== 0 ? this.cards -= 1 : resetPointsWithNewHand()
 };
 
 Game.prototype.hitAgain = function(){
@@ -125,12 +130,12 @@ Game.prototype.play = function(){
 	this.updateCardsLeft() 
 	this.turn === true ? this.houseDrawsCard() : this.hitAgain()
 	this.turn = !this.turn
-	return this.pickFromDeck
 };
 
 Game.prototype.stop = function(){
 	this.calls = true
 	this.turn = false
+	this.playerWins()
 };
 
 	Game.prototype.declareWinner = function(){

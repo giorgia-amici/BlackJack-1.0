@@ -1,5 +1,8 @@
 function Player(){
 	this.calls = false
+	this.pickFromDeckPlayer = []
+	this.temp
+
 }
 
 Player.prototype.stop = function(){

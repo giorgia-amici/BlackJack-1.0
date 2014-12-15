@@ -1,10 +1,61 @@
-
 body {
-  background-color: #006633;
-  text-align: center;
+	background-color: #006633;
+	text-align: center;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-/*img{
-	visibility: hidden;
+p {
+	text-align: left;
+}
+
+h1 {
+	text-align: center;
+	font: 64px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+/*img {
+	width= 180px;
+	height= 250px;
 }*/
 
+.face_down_deck {
+	-ms-transform: rotate(90deg); 
+  -webkit-transform: rotate(90deg); 
+  transform: rotate(90deg);
+  position: absolute;
+  margin-top: 290px;
+}
+
+
+#face_down_player {
+	padding: 0px;
+	float: middle;
+	margin: 49px;
+}
+
+#face_down_game{
+	padding: 0px;
+	margin: 49px;
+}
+
+.pick {
+	margin: 20px;
+	margin-top: 215px;
+	
+}
+
+.housepick {
+	padding: 20px;
+	margin-top: -346px;
+}
+
+#points {
+	font: 34px Helvetica, Arial, serif;
+}
+
+/*.btn-danger{
+	margin-left: 280px;
+}
+
+*/
