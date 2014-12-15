@@ -45,7 +45,6 @@ blackjackServices.factory('Game', [function(){
 	this.houseTotal = 0
 	this.playerTotal = 0
 	this.calls = false
-
 };
 
 Game.prototype.addDeck = function(deck){
